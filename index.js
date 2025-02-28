@@ -37,10 +37,10 @@ app.listen(port, () => {
   console.log('\x1b[36m[ SERVER ]\x1b[0m', '\x1b[32m SH : http://localhost:' + port + ' ✅\x1b[0m');
 });
 
-const statusMessages = ["🤖Chill Heaven hivatalos bot.🤖"];
+const statusMessages = ["🤖Chill Heaven hivatalos bot."];
 const statusTypes = [ 'dnd'];
 let currentStatusIndex = 1;
-let currentTypeIndex = 1;
+let currentTypeIndex = 0;
 
 async function login() {
   try {
@@ -58,8 +58,8 @@ function updateStatus() {
   const currentStatus = statusMessages[currentStatusIndex];
   const currentType = statusTypes[currentTypeIndex];
   client.user.setPresence({
-    activities: [{ name: "🤖Chill Heaven hivatalos bot.🤖", type: ActivityType.Custom }],
-    status: currentStatus,
+    activities: [{ name: "🤖Chill Heaven hivatalos bot.", type: ActivityType.Custom }],
+    status: statusMessages,
   });
   console.log('\x1b[33m[ STATUS ]\x1b[0m', `Updated status to: ${currentStatus} (${currentType})`);
   currentStatusIndex = (currentStatusIndex + 1) % statusMessages.length;
