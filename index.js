@@ -38,7 +38,7 @@ app.listen(port, () => {
 });
 
 const statusMessages = ["🤖Chill Heaven hivatalos bot."];
-const statusTypes = [ 'dnd'];
+const statusTypes = [ 'idle'];
 let currentStatusIndex = 1;
 let currentTypeIndex = 0;
 
